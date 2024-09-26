@@ -18,5 +18,9 @@ for _, module in ipairs(config.modules) do
   end
 end
 
+-- Set up hints module
+local hints = require("modules.hints")
+hints.setup()
+
 -- Log successful initialization
 logger.i("Hammerspoon configuration loaded")

@@ -4,6 +4,7 @@ local config = {
   modules = {
       "windows",
       "colorpicker",
+      "hints",
   },
   -- Global key definitions
   keys = {
