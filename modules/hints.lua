@@ -1,10 +1,15 @@
 -- ~/.hammerspoon/modules/hints.lua
 
 local hints = {}
+local config = require("config")
 local hsHints = require "hs.hints"
 local window = require "hs.window"
 local timer = require "hs.timer"
 local logger = require("utils.logger")
+
+-- Define meh and hyper keys
+local meh = config.keys.meh
+local hyper = config.keys.hyper
 
 -- Configuration (keep existing configuration)
 hsHints.hintChars = {'J','F','K','D','L','S','A','H','G','Y','U','I','O','P','Q','W','E','R','T','M','N','B','V','C','X','Z'}
@@ -48,7 +53,7 @@ local function showHints()
 end
 
 function hints.setup()
-    hs.hotkey.bind({"cmd", "alt"}, "H", function()
+    hs.hotkey.bind(hyper, "w", function()
         local startTime = timer.secondsSinceEpoch()
         
         showHints()
